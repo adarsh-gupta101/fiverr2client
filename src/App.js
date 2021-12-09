@@ -135,9 +135,9 @@ export default function App() {
         <rectAreaLight width={3} height={4} color={"whitesmoke"} intensity={2.5} position={[2, 0.1, 4]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
         <rectAreaLight width={3} height={3} color={"whitesmoke"} intensity={2.5} position={[-2, 0.3, 3.5]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
 
-        <group position={[0, -0.3, 1]} ref={model1} >
+        {/* <group position={[0, -0.3, 1]} ref={model1} >
           <Model1  />
-        </group>
+        </group> */}
         <OrbitControls />
         <Environment preset="forest" background /> 
       </Suspense>
