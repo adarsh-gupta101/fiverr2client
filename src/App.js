@@ -56,6 +56,7 @@ import { Environment, OrbitControls } from "@react-three/drei"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Suspense, useEffect, useRef, useState } from "react"
 import * as THREE from "three"
+import Overlay from "./Overlay"
 
 import Model1 from "./models/Model1"
 
@@ -121,6 +122,7 @@ export default function App() {
     //   <Overlay ref={overlay} caption={caption} scroll={scroll} />
     // </>
     // <Overlay ref={overlay} caption={caption} scroll={scroll} />
+    <>
     <Canvas>
       
       {/* useFrame(()=>{(model1ref.current.rotation.y += 0.01)}) */}
@@ -140,5 +142,7 @@ export default function App() {
         <Environment preset="forest" background /> 
       </Suspense>
     </Canvas>
+    <Overlay ref={overlay} caption={caption} scroll={scroll} />
+    </>
   )
 }
