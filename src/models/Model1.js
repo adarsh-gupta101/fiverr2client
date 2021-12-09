@@ -186,9 +186,9 @@ export default function Model(props) {
   const { nodes, materials, animations } = useGLTF('/block_99 (1).glb')
   const { actions } = useAnimations(animations, group)
   useFrame((state)=>{
-    group.current.rotation.x=Math.sin(state.clock.getElapsedTime())
-    group.current.rotation.y=Math.cos(state.clock.getElapsedTime()-0.5)
-    group.current.rotation.z=Math.cos(state.clock.getElapsedTime())
+    group.current.rotation.y=(state.clock.getElapsedTime())
+    // group.current.rotation.y=Math.cos(state.clock.getElapsedTime()-0.5)
+    // group.current.rotation.z=Math.cos(state.clock.getElapsedTime())
 
 
   })
