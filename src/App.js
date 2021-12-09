@@ -89,36 +89,38 @@ export default function App() {
   const model1 = useRef()
 
   return (
-    <>
-      <Canvas>
-        {/* useFrame(()=>{(model1ref.current.rotation.y += 0.01)}) */}
-        <Suspense fallback={null}>
-          <primitive object={new THREE.AxesHelper(10)} />
-          {/* <pointLeight color="white" intensity={2}/> */}
-          {/* {/* <ambientLight intensity={0.6}/> */}
-          <ambientLight intensity={0.2} position={[0, 0, 0]} />
-          {/* <hemisphereLight intensity={1} position={[0,1,0]} color={new THREE.Color("0x00ffff","0xffffff")}/> */}
-          <rectAreaLight width={3} height={4} color={"whitesmoke"} intensity={2.5} position={[2, 0.1, 4]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
-          <rectAreaLight width={3} height={3} color={"whitesmoke"} intensity={2.5} position={[-2, 0.3, 3.5]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
+    // <>
+    //  /*  <Canvas>
+    //     {/* useFrame(()=>{(model1ref.current.rotation.y += 0.01)}) */}
+    //     <Suspense fallback={null}>
+    //       <primitive object={new THREE.AxesHelper(10)} />
+    //       {/* <pointLeight color="white" intensity={2}/> */}
+    //       {/* {/* <ambientLight intensity={0.6}/> */}
+    //       <ambientLight intensity={0.2} position={[0, 0, 0]} />
+    //       {/* <hemisphereLight intensity={1} position={[0,1,0]} color={new THREE.Color("0x00ffff","0xffffff")}/> */}
+    //       <rectAreaLight width={3} height={4} color={"whitesmoke"} intensity={2.5} position={[2, 0.1, 4]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
+    //       <rectAreaLight width={3} height={3} color={"whitesmoke"} intensity={2.5} position={[-2, 0.3, 3.5]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
 
-          <group position={[0, -0.3, 0.6]}>
-            <Model1 model={model1}/>
-            <group ref={model1ref} position={[0, 0, 0]}>
-              <Model2 />
-            </group>
+    //       <group position={[0, -0.3, 0.6]}>
+    //         <Model1 model={model1}/>
+    //         <group ref={model1ref} position={[0, 0, 0]}>
+    //           <Model2 />
+    //         </group>
 
-            <Model3 />
-            <Model4 />
-            <Model5 />
-            <Model6 />
-            <Model7 />
-          </group>
-          {/* <OrbitControls /> */}
-          {/* <Environment preset="sunset" background /> */}
-        </Suspense>
-      </Canvas>
-      {/* <Overlay ref={overlay} caption={caption} scroll={scroll} /> */}
-      <Overlay ref={overlay} caption={caption} scroll={scroll} />
-    </>
+    //         <Model3 />
+    //         <Model4 />
+    //         <Model5 />
+    //         <Model6 />
+    //         <Model7 />
+    //       </group>
+    //       {/* <OrbitControls /> */}
+    //       {/* <Environment preset="sunset" background /> */}
+    //     </Suspense>
+    //   </Canvas> 
+     
+    //   {/* <Overlay ref={overlay} caption={caption} scroll={scroll} /> */}
+    //   <Overlay ref={overlay} caption={caption} scroll={scroll} />
+    // </>
+    <Overlay ref={overlay} caption={caption} scroll={scroll} />
   )
 }
