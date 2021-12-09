@@ -57,16 +57,10 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import { Suspense, useEffect, useRef, useState } from "react"
 import * as THREE from "three"
 
-import Overlay from "./Overlay"
 import Model1 from "./models/Model1"
-import Model2 from "./models/Model2"
-import Model3 from "./models/Model3"
-import Model4 from "./models/Model4"
-import Model5 from "./models/Model5"
-import Model6 from "./models/Model6"
-import Model7 from "./models/Model7"
 
 import { AmbientLight } from "three"
+import { Clock } from "three"
 const Model = () => {
   const gltf = useLoader(GLTFLoader, "./block_1.gltf")
   return (
@@ -87,6 +81,11 @@ export default function App() {
   const scroll = useRef(0)
   const model1ref = useRef()
   const model1 = useRef()
+  // useEffect(()=>{
+  //   setScrollTop(Math.random()-0.5)
+  // })
+  // setInterval(()=>{    setScrollTop(Math.random()-0.5)
+  // },3000)
 
   return (
     // <>
@@ -116,11 +115,30 @@ export default function App() {
     //       {/* <OrbitControls /> */}
     //       {/* <Environment preset="sunset" background /> */}
     //     </Suspense>
-    //   </Canvas> 
-     
+    //   </Canvas>
+
     //   {/* <Overlay ref={overlay} caption={caption} scroll={scroll} /> */}
     //   <Overlay ref={overlay} caption={caption} scroll={scroll} />
     // </>
-    <Overlay ref={overlay} caption={caption} scroll={scroll} />
+    // <Overlay ref={overlay} caption={caption} scroll={scroll} />
+    <Canvas>
+      
+      {/* useFrame(()=>{(model1ref.current.rotation.y += 0.01)}) */}
+      <Suspense fallback={null}>
+        {/* <primitive object={new THREE.AxesHelper(10)} /> */}
+        {/* <pointLeight color="white" intensity={2}/> */}
+        {/* {/* <ambientLight intensity={0.6}/> */}
+        <ambientLight intensity={0.1} position={[0, 0, 0]} />
+        {/* <hemisphereLight intensity={1} position={[0,1,0]} color={new THREE.Color("0x00ffff","0xffffff")}/> */}
+        <rectAreaLight width={3} height={4} color={"whitesmoke"} intensity={2.5} position={[2, 0.1, 4]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
+        <rectAreaLight width={3} height={3} color={"whitesmoke"} intensity={2.5} position={[-2, 0.3, 3.5]} lookAt={[0, 0, 0]} penumbra={1} castShadow />
+
+        <group position={[0, -0.3, 1]} ref={model1} >
+          <Model1  />
+        </group>
+        <OrbitControls />
+        <Environment preset="forest" background /> 
+      </Suspense>
+    </Canvas>
   )
 }
