@@ -6,15 +6,17 @@ export default function Model(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/block_1.gltf')
   const { actions } = useAnimations(animations, group)
+  console.log(props)
+
   return (
     <group ref={group} {...props} dispose={null} position={[0,-2,3]} scale={5}>
-      <group name="r1_11x9B_2" position={[-0.04, 0.33, 0.01]}>
-        <mesh
+      <group name="r1_11x9B_2" position={[-0.04, 0.33, 0.01]} >
+        <mesh 
           castShadow
           receiveShadow
           geometry={nodes.r1_11x9B_2_1.geometry}
           material={nodes.r1_11x9B_2_1.material}
-        />
+               />
         <mesh
           castShadow
           receiveShadow
